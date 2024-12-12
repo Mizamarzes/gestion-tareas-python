@@ -1,4 +1,5 @@
-from models.model import TareaModel, EstadoTarea, SessionLocal
+from models.tarea_model import TareaModel
+from models.database import SessionLocal
 
 # Crear una tarea
 def crear_tarea(titulo, descripcion):

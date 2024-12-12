@@ -1,6 +1,7 @@
 import streamlit as st
-from controllers.controller import crear_tarea, listar_tareas, actualizar_estado_tarea, eliminar_tarea
-from models.model import EstadoTarea, init_db
+from controllers.tarea_controller import crear_tarea, listar_tareas, actualizar_estado_tarea, eliminar_tarea
+from models.tarea_model import EstadoTarea
+from models.database import init_db
 
 # Inicializar la base de datos
 init_db()
@@ -29,4 +30,3 @@ for tarea in tareas:
     if st.button(f"Eliminar Tarea {tarea.id}"):
         eliminar_tarea(tarea.id)
         st.experimental_rerun()
-

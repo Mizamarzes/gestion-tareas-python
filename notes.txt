@@ -1,9 +1,6 @@
 
 - Opciones para interfaces graficas
-
-- tkinter
-
-- Video de ejemplo: https://www.youtube.com/watch?v=UdIx9g5X1wQ 
+- Streamlit
 
 
 - Actividad para el viernes 13 de diciembre de 2024
@@ -37,7 +34,7 @@ Utiliza una conexión a una base de datos SQL para tener persistencia de datos (
 
 
 
+-- README example
 
-Dependencias de python:
-
-- pip install SQLAlchemy==2.0.27
+-- instalar Dependencias
+--

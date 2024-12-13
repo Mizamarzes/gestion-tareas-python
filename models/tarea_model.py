@@ -2,7 +2,6 @@ from sqlalchemy import Column, String, Integer, Enum
 import enum
 from models.database import Base
 
-
 # Definir el enumerador para el estado de la tarea
 class EstadoTarea(enum.Enum):
     PENDIENTE = "pendiente"

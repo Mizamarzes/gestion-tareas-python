@@ -37,4 +37,4 @@ Utiliza una conexión a una base de datos SQL para tener persistencia de datos (
 -- README example
 
 -- instalar Dependencias
---
+-- para correr el programa - streamlit run app.py

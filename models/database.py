@@ -2,24 +2,23 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-# Configuración del motor de base de datos
-DATABASE_URL = "sqlite:///gestor_tareas.db"
+# Database engine configuration
+DATABASE_URL = "sqlite:///task_manager_db.db"
 engine = create_engine(DATABASE_URL, connect_args={"check_same_thread": False})
 
-# Base para los modelos
+# Base class for models
 Base = declarative_base()
 
-# Configuración de la sesión
+# Session configuration
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 def init_db():
     """
-    Inicializa la base de datos creando todas las tablas definidas en los modelos.
+    Initializes the database by creating all tables defined in the models.
     """
     try:
-        from models.tarea_model import TareaModel  # Importa los modelos aquí para registrarlos
+        from models.task_model import TaskModel  # Import the models here to register them
         Base.metadata.create_all(bind=engine)
-        print("Base de datos inicializada correctamente.")
+        print("Database initialized correctly.")
     except Exception as e:
-        print(f"Error al inicializar la base de datos: {e}")
-
+        print(f"Error initializing the database: {e}")

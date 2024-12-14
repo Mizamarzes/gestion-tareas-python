@@ -1,64 +1,74 @@
 import streamlit as st
-from controllers.tarea_controller import crear_tarea, listar_tareas, actualizar_estado_tarea, eliminar_tarea
-from models.tarea_model import EstadoTarea
+from controllers.task_controller import create_task, list_tasks, update_task_status, delete_task
+from models.task_model import TaskStatus
 from models.database import init_db
 
-# Inicializar la base de datos
+#components
+from components.alert import custom_alert
+
+# Initialize the database
 init_db()
 
-st.title("Gestor de Tareas")
+st.title("Task Manager")
 
-# Crear nueva tarea
-st.header("Crear Nueva Tarea")
-titulo = st.text_input("Título")
-descripcion = st.text_input("Descripción")
-if st.button("Agregar Tarea"):
-    if titulo and descripcion:
-        crear_tarea(titulo, descripcion)
-        st.success("¡Tarea creada con éxito!")
+# Create a new task
+st.header("Create New Task")
+title = st.text_input("Title")
+description = st.text_input("Description")
+if st.button("Add Task"):
+    if title and description:
+        create_task(title, description)
+        st.success("Task successfully created!")
     else:
-        st.error("Por favor completa todos los campos.")
+        st.error("Please fill in all fields.")
 
-# Filtros de tareas
-st.header("Filtrar Tareas")
-columna_1, columna_2 = st.columns(2)
-with columna_1:
-    tareas_pendientes = st.button("Ver Tareas Pendientes")
-with columna_2:
-    tareas_completadas = st.button("Ver Tareas Completadas")
+# Display tasks in a table
+st.header("Task List")
 
-# Obtener tareas según el filtro
-if tareas_pendientes:
-    tareas = listar_tareas(EstadoTarea.PENDIENTE)
-elif tareas_completadas:
-    tareas = listar_tareas(EstadoTarea.COMPLETADA)
+# Get all tasks without filtering
+tasks = list_tasks()
+
+if not tasks:
+    st.write("No tasks to display.")
 else:
-    tareas = listar_tareas()
+    # Table header
+    col1, col2, col3, col4, col5, col6, col7 = st.columns([1, 3, 3, 2, 1, 1, 1])
+    col1.write("**ID**")
+    col2.write("**Title**")
+    col3.write("**Description**")
+    col4.write("**Status**")
+    col5.write("")
+    col6.write("")
+    col7.write("")
 
-# Mostrar tareas
-st.header("Lista de Tareas")
-for tarea in tareas:
-    # Crear un layout de columnas para cada tarea
-    col1, col2, col3, col4 = st.columns([3, 4, 3, 3])
-    
-    with col1:
-        st.write(f"**ID:** {tarea.id} | **Título:** {tarea.titulo}")
-    
-    with col2:
-        st.write(f"**Descripción:** {tarea.descripcion}")
-    
-    with col3:
-        if tarea.estado == EstadoTarea.PENDIENTE:
-            st.markdown(f"**Estado:** :red[Pendiente]")
-        elif tarea.estado == EstadoTarea.COMPLETADA:
-            st.markdown(f"**Estado:** :green[Completada]")
-
-    with col4:
-        if tarea.estado == EstadoTarea.PENDIENTE:
-            if st.button(f"Completar Tarea"):
-                actualizar_estado_tarea(tarea.id, EstadoTarea.COMPLETADA)
-                st.rerun()
+    for task in tasks:
+        # Create a row for each task
+        col1, col2, col3, col4, col5, col6, col7 = st.columns([1, 3, 3, 2, 1, 1, 1])
+        col1.write(task.id)
+        col2.write(task.title)
+        col3.write(task.description)
         
-        if st.button(f"Eliminar Tarea "):
-            eliminar_tarea(tarea.id)
-            st.rerun()
+        # Display state with color
+        if task.status == TaskStatus.PENDING:
+            col4.markdown("🔴**Pending**")
+        elif task.status == TaskStatus.COMPLETED:
+            col4.markdown("🟢**Completed**")
+        
+        # Complete button
+        with col5:
+            if task.status == TaskStatus.PENDING:
+                if st.button("✔️", key=f"complete_{task.id}"):
+                    update_task_status(task.id, TaskStatus.COMPLETED)
+                    st.rerun()
+
+        # Delete button
+        with col6:
+            if st.button("❌", key=f"delete_{task.id}"):
+                delete_task(task.id)
+                st.rerun()
+
+        # Update button
+        with col7:
+            if st.button("⚙", key=f"update_{task.id}"):
+                # Add your logic to update a task
+                custom_alert(f"Update functionality for tasks not implemented yet.")

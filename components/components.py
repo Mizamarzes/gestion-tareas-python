@@ -7,3 +7,4 @@ def custom_alert(message: str):
             alert("{message}");
         </script>
     """)
+

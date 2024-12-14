@@ -1,10 +1,10 @@
 import streamlit as st
-from controllers.task_controller import create_task, list_tasks, update_task_status, delete_task
+from controllers.task_controller import create_task, list_tasks, update_task, delete_task, export_tasks_to_excel
 from models.task_model import TaskStatus
 from models.database import init_db
 
 #components
-from components.alert import custom_alert
+from components.components import custom_alert
 
 # Initialize the database
 init_db()
@@ -58,7 +58,7 @@ else:
         with col5:
             if task.status == TaskStatus.PENDING:
                 if st.button("✔️", key=f"complete_{task.id}"):
-                    update_task_status(task.id, TaskStatus.COMPLETED)
+                    update_task(task.id, task.title, task.description, TaskStatus.COMPLETED)
                     st.rerun()
 
         # Delete button
@@ -70,5 +70,17 @@ else:
         # Update button
         with col7:
             if st.button("⚙", key=f"update_{task.id}"):
-                # Add your logic to update a task
-                custom_alert(f"Update functionality for tasks not implemented yet.")
+                custom_alert("Working...")
+
+# Add a button to export tasks to Excel
+if st.button("Export Tasks to Excel"):
+    # Call the function to export tasks to Excel
+    excel_file = export_tasks_to_excel()
+
+    # Send the file for download
+    st.download_button(
+        label="Download Excel",
+        data=excel_file,
+        file_name="tasks.xlsx",
+        mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    )

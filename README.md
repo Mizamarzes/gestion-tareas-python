@@ -34,6 +34,8 @@ streamlit run app.py
 
 Este comando abrirá una nueva ventana del navegador con la interfaz de la aplicación.
 
+![ui](D:\code\beca-ia-campuslands\gestion-tareas-python\img\ui.PNG)
+
 ## Uso de la Aplicación
 
 Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella a través de la interfaz proporcionada por Streamlit. Las principales funcionalidades disponibles son:
@@ -63,20 +65,14 @@ Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella
 - Esto generará un archivo Excel con la lista de tareas.
 - Una vez generado, podrás descargar el archivo haciendo clic en el botón **"Download Excel File"**.
 
+![excel-example](D:\code\beca-ia-campuslands\gestion-tareas-python\img\excel-example.PNG)
+
 ## Estructura del Proyecto
 
 La estructura del proyecto es la siguiente:
 
-```bash
-│
-├── app.py                  # Aplicación Streamlit
-├── controllers/            # Lógica de negocio (crear, listar, actualizar, eliminar tareas)
-│   └── task_controller.py  # Controlador de tareas
-├── models/                 # Definición de la base de datos y modelo de tareas
-│   ├── task_model.py       # Modelo de tareas (SQLAlchemy)
-│   └── database.py         # Conexión a la base de datos
-├── components/             # Componentes reutilizables
-│   └── components.py       # Componentes personalizados para la app
-├── requirements.txt        # Dependencias del proyecto
-└── README.md               # Documentación del proyecto
-```
+![file-structure](D:\code\beca-ia-campuslands\gestion-tareas-python\img\file-structure.PNG)
+
+## Sonarqube - Sonar - Scanner Overview
+
+![sonarqube-overview](D:\code\beca-ia-campuslands\gestion-tareas-python\img\sonarqube-overview.PNG)

@@ -34,7 +34,7 @@ streamlit run app.py
 
 Este comando abrirá una nueva ventana del navegador con la interfaz de la aplicación.
 
-![ui](D:\code\beca-ia-campuslands\gestion-tareas-python\img\ui.PNG)
+![ui](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/ui.PNG)
 
 ## Uso de la Aplicación
 
@@ -65,14 +65,14 @@ Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella
 - Esto generará un archivo Excel con la lista de tareas.
 - Una vez generado, podrás descargar el archivo haciendo clic en el botón **"Download Excel File"**.
 
-![excel-example](D:\code\beca-ia-campuslands\gestion-tareas-python\img\excel-example.PNG)
+![excel-example](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/excel-example.PNG)
 
 ## Estructura del Proyecto
 
 La estructura del proyecto es la siguiente:
 
-![file-structure](D:\code\beca-ia-campuslands\gestion-tareas-python\img\file-structure.PNG)
+![file-structure](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/file-structure.PNG)
 
 ## Sonarqube - Sonar - Scanner Overview
 
-![sonarqube-overview](D:\code\beca-ia-campuslands\gestion-tareas-python\img\sonarqube-overview.PNG)
+![sonarqube-overview](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/sonarqube-overview.PNG)

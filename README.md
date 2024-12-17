@@ -18,7 +18,7 @@ pip install -r requirements.txt
 Dependencias necesarias:
 
 ```bash
-makefileCopy codeSQLAlchemy==1.4.49
+SQLAlchemy==1.4.49
 streamlit
 pandas
 openpyxl
@@ -71,7 +71,7 @@ Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella
 
   
 
-  ![ui-create-task](D:\code\beca-ia-campuslands\gestion-tareas-python\img\ui-create-task.PNG)
+  ![ui-create-task](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/ui-create-task.PNG)
 
 ### 2. **Ver la lista de tareas**
 
@@ -86,7 +86,7 @@ Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella
     - **❌**: Elimina la tarea.
     - **⚙**: Permite actualizar los detalles de la tarea(en desarrollo).
 
-![ui-tasklist](D:\code\beca-ia-campuslands\gestion-tareas-python\img\ui-tasklist.PNG)
+![ui-tasklist](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/ui-tasklist.PNG)
 
 ### 3. **Exportar tareas a Excel**
 
@@ -94,7 +94,7 @@ Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella
 - Esto generará un archivo Excel con la lista de tareas.
 - Una vez generado, podrás descargar el archivo haciendo clic en el botón **"Download Excel File"**.
 
-![excel-example-data](D:\code\beca-ia-campuslands\gestion-tareas-python\img\excel-example-data.PNG)
+![excel-example-data](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/excel-example-data.PNG)
 
 ### 4. **Exportar tareas a JSON**
 
@@ -102,7 +102,7 @@ Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella
 - Esto generará un archivo JSON con la lista de tareas.
 - Una vez generado, podrás descargar el archivo haciendo clic en el botón **"Download JSON File"**.
 
-![json-example-data](D:\code\beca-ia-campuslands\gestion-tareas-python\img\json-example-data.PNG)
+![json-example-data](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/json-example-data.PNG)
 
 ### 5. **Importar tareas desde un archivo JSON**
 
@@ -110,16 +110,16 @@ Una vez que la aplicación esté en funcionamiento, podrás interactuar con ella
 - Haz clic en el botón **"Upload JSON File"** para cargar el archivo.
 - Una vez cargado, las tareas se agregarán a la lista y podrás verlas en la sección de tareas.
 
-![ui-import-export](D:\code\beca-ia-campuslands\gestion-tareas-python\img\ui-import-export.PNG)
+![ui-import-export](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/ui-import-export.PNG)
 
 ## Estructura del Proyecto
 
 La estructura del proyecto es la siguiente:
 
-![file-structure](D:\code\beca-ia-campuslands\gestion-tareas-python\img\file-structure.PNG)
+![file-structure](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/file-structure.PNG)
 
 ## SonarQube - Análisis de Calidad de Código
 
 Para mantener la calidad del código, se utiliza SonarQube para realizar un análisis estático. A continuación, puedes ver un resumen del análisis realizado:
 
-![sonarqube-overview](D:\code\beca-ia-campuslands\gestion-tareas-python\img\sonarqube-overview.PNG)
+![sonarqube-overview](https://github.com/Mizamarzes/gestion-tareas-python/blob/master/img/sonarqube-overview.PNG)

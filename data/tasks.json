@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "title": "Complete project documentation",
+      "description": "Write all the necessary documentation for the final project.",
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "title": "Develop API endpoints",
+      "description": "Create RESTful API endpoints for user management.",
+      "status": "completed"
+    },
+    {
+      "id": 3,
+      "title": "Refactor code",
+      "description": "Improve the code quality by refactoring controllers.",
+      "status": "pending"
+    },
+    {
+      "id": 4,
+      "title": "Create unit tests",
+      "description": "Add unit tests for the task controller.",
+      "status": "pending"
+    },
+    {
+      "id": 5,
+      "title": "Fix bug in login flow",
+      "description": "Resolve the authentication bug preventing user login.",
+      "status": "completed"
+    }
+  ]
+  
